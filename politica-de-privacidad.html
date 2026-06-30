@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Confort Acuario</title>
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/ffwq31mi/image/upload/v1782844270/favicon_m9qg8c.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        .policy-page{min-height:100vh;background:var(--bg-gray);padding:2rem 0}
+        .policy-container{max-width:800px;margin:0 auto;padding:0 1.25rem}
+        .policy-header{text-align:center;margin-bottom:3rem;padding-top:1rem}
+        .policy-header .brand-logo{display:inline-flex;margin-bottom:1.5rem}
+        .policy-header h1{font-size:2rem;font-weight:800;color:var(--text-dark);margin-bottom:0.5rem}
+        .policy-header .last-updated{font-size:0.9rem;color:#6c757d}
+        .policy-content{background:#fff;border-radius:var(--border-radius-md);box-shadow:var(--shadow-sm);padding:2.5rem;margin-bottom:2rem}
+        .policy-content h2{font-size:1.3rem;font-weight:700;color:var(--text-dark);margin:2rem 0 0.75rem;padding-top:1rem;border-top:1px solid var(--border-color)}
+        .policy-content h2:first-child{margin-top:0;border-top:none;padding-top:0}
+        .policy-content h3{font-size:1.1rem;font-weight:600;color:var(--text-dark);margin:1.5rem 0 0.5rem}
+        .policy-content p,.policy-content li{font-size:0.95rem;color:#495057;line-height:1.8;margin-bottom:0.75rem}
+        .policy-content ul{padding-left:1.5rem;margin-bottom:1rem}
+        .policy-content li{margin-bottom:0.5rem}
+        .policy-content strong{color:var(--text-dark)}
+        .policy-content a{color:var(--primary-orange);text-decoration:underline}
+        .policy-content a:hover{color:var(--primary-orange-dark)}
+        .policy-content .highlight{background:#fff8f0;border-left:4px solid var(--primary-orange);padding:1rem 1.25rem;border-radius:0 var(--border-radius-sm) var(--border-radius-sm) 0;margin:1rem 0}
+        .policy-back{display:inline-flex;align-items:center;gap:0.5rem;color:var(--primary-orange);text-decoration:none;font-weight:600;font-size:0.95rem;margin-bottom:2rem;transition:var(--transition-fast)}
+        .policy-back:hover{color:var(--primary-orange-dark);gap:0.75rem}
+        .policy-print-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--primary-orange);color:#fff;border:none;padding:0.625rem 1.25rem;border-radius:50px;font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:600;cursor:pointer;transition:var(--transition-fast);margin-left:0.75rem}
+        .policy-print-btn:hover{background:var(--primary-orange-dark);transform:translateY(-2px)}
+        @media print{body{background:#fff}.policy-page{padding:0}.policy-container{max-width:100%}.policy-header{margin-bottom:1.5rem}.policy-content{box-shadow:none;padding:0;border-radius:0}a.policy-back,.policy-print-btn,.footer-content{display:none !important}h1{font-size:1.5rem}}
+        @media(max-width:700px){.policy-content{padding:1.5rem}.policy-header h1{font-size:1.5rem}}
+        @media(max-width:375px){.policy-content{padding:1.25rem}.policy-header h1{font-size:1.3rem}}
+    </style>
+    <script>
+        function generarPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+
+            const w = doc.internal.pageSize.getWidth();
+            const m = 20;
+            const cW = w - m * 2;
+            let y = 20;
+
+            function title(t) {
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(13);
+                doc.setTextColor(33, 37, 41);
+                doc.text(t, m, y);
+                y += 7;
+                doc.setDrawColor(255, 117, 24);
+                doc.setLineWidth(0.5);
+                doc.line(m, y, m + cW, y);
+                y += 6;
+            }
+
+            function body(t) {
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                doc.setTextColor(73, 80, 87);
+                const lines = doc.splitTextToSize(t, cW);
+                lines.forEach(l => {
+                    if (y > 270) { doc.addPage(); y = 20; }
+                    doc.text(l, m, y);
+                    y += 5;
+                });
+                y += 2;
+            }
+
+            function bullet(t) {
+                doc.setFont('helvetica', 'normal');
+                doc.setFontSize(10);
+                doc.setTextColor(73, 80, 87);
+                const lines = doc.splitTextToSize('• ' + t, cW - 5);
+                lines.forEach(l => {
+                    if (y > 270) { doc.addPage(); y = 20; }
+                    doc.text(l, m + 3, y);
+                    y += 5;
+                });
+                y += 1;
+            }
+
+            // HEADER
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(18);
+            doc.setTextColor(10, 30, 61);
+            doc.text('Confort Acuario', w / 2, y, { align: 'center' });
+            y += 8;
+            doc.setFontSize(15);
+            doc.setTextColor(33, 37, 41);
+            doc.text('Politica de Privacidad', w / 2, y, { align: 'center' });
+            y += 7;
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9);
+            doc.setTextColor(108, 117, 125);
+            doc.text('Ultima actualizacion: 30 de junio de 2026', w / 2, y, { align: 'center' });
+            y += 12;
+
+            body('En Confort Acuario, protegemos tu privacidad segun la Ley N 25.326 de Proteccion de Datos Personales de la Republica Argentina.');
+
+            title('Responsable');
+            body('Confort Acuario, Ciudad Autonoma de Buenos Aires. Contacto: WhatsApp oficial de la sucursal elegida.');
+
+            title('Datos y Finalidad');
+            body('Solicitamos tu Nombre, DNI y Sucursal exclusivamente para evaluar tu pre-calificacion crediticia a traves del sistema oficial de Boston Cred y derivarte con un asesor. No te pediremos datos bancarios, tarjetas ni correos electronicos.');
+
+            title('Legitimacion');
+            body('Tratamos tus datos unicamente bajo tu consentimiento expreso, el cual nos otorgas al marcar la casilla obligatoria y enviar este formulario.');
+
+            title('Seguridad y Plazo');
+            body('Tus datos viajan encriptados por HTTPS y se guardan de forma confidencial en nuestra base de datos. Se eliminan automaticamente a los 90 dias. No se venden ni se comparten con terceros.');
+
+            title('Tus Derechos');
+            body('Podes solicitar el Acceso, Rectificacion o Eliminacion de tus datos en cualquier momento escribiendonos por WhatsApp con tu Nombre y DNI.');
+
+            doc.save('Politica-Privacidad-Confort-Acuario.pdf');
+        }
+    </script>
+</head>
+<body>
+    <div class="policy-page">
+        <div class="policy-container">
+                <a href="index.html" class="policy-back"><i class="fa-solid fa-arrow-left"></i> Volver al formulario</a>
+                <button onclick="generarPDF()" class="policy-print-btn"><i class="fa-solid fa-file-pdf"></i> Descargar PDF</button>
+
+            <div class="policy-header">
+                <a href="https://confortacuario.com.ar/" target="_blank" class="brand-logo">
+                    <img src="https://res.cloudinary.com/ffwq31mi/image/upload/v1782844270/logo_xje7wf.png" alt="Confort Acuario" class="brand-logo-img" width="200" height="50" loading="eager">
+                </a>
+                <h1>Política de Privacidad</h1>
+                <p class="last-updated">Última actualización: 30 de junio de 2026</p>
+            </div>
+
+            <div class="policy-content">
+                <p>Última actualización: 30 de junio de 2026</p>
+                <p>En <strong>Confort Acuario</strong>, protegemos tu privacidad según la <strong>Ley Nº 25.326 de Protección de Datos Personales</strong> de la República Argentina.</p>
+
+                <h2>Responsable</h2>
+                <p>Confort Acuario, Ciudad Autónoma de Buenos Aires. Contacto: WhatsApp oficial de la sucursal elegida.</p>
+
+                <h2>Datos y Finalidad</h2>
+                <p>Solicitamos tu <strong>Nombre</strong>, <strong>DNI</strong> y <strong>Sucursal</strong> exclusivamente para evaluar tu pre-calificación crediticia a través del sistema oficial de Boston Cred y derivarte con un asesor. No te pediremos datos bancarios, tarjetas ni correos electrónicos.</p>
+
+                <h2>Legitimación</h2>
+                <p>Tratamos tus datos únicamente bajo tu consentimiento expreso, el cual nos otorgás al marcar la casilla obligatoria y enviar este formulario.</p>
+
+                <h2>Seguridad y Plazo</h2>
+                <p>Tus datos viajan encriptados por HTTPS y se guardan de forma confidencial en nuestra base de datos. Se eliminan automáticamente a los <strong>90 días</strong>. No se venden ni se comparten con terceros.</p>
+
+                <h2>Tus Derechos</h2>
+                <p>Podés solicitar el <strong>Acceso</strong>, <strong>Rectificación</strong> o <strong>Eliminación</strong> de tus datos en cualquier momento escribiéndonos por WhatsApp con tu Nombre y DNI.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /serve.ps1
+Disallow: /google-apps-script.js
+
+Sitemap: https://confortacuario.com.ar/sitemap.xml

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitá tu Crédito Personal - Confort Acuario</title>
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/ffwq31mi/image/upload/v1782844270/favicon_m9qg8c.png">
+    <meta name="description" content="Solicitá tu crédito personal en Confort Acuario solo con DNI y celular. Aprobación inmediata hasta $1.000.000.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://res.cloudinary.com; connect-src https://script.google.com https://script.googleusercontent.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="container hero-content">
+            
+            <div class="hero-text-area">
+                <a href="https://confortacuario.com.ar/" target="_blank" class="brand-logo">
+                    <img src="https://res.cloudinary.com/ffwq31mi/image/upload/v1782844270/logo_xje7wf.png" alt="Confort Acuario" class="brand-logo-img" width="200" height="50" loading="eager">
+                </a>
+                
+                <h1 class="hero-title">SOLICITÁ TU <span>CRÉDITO</span><br><span>PERSONAL.</span><br><span>HASTA $1.000.000.</span></h1>
+                
+                <div class="hero-subtitle">
+                    <p class="subtitle-text">Solo con tu DNI y celular.<br>
+                    ¡LLÉVATE HOY MISMO LO QUE NECESITAS!</p>
+                    <span class="badge">APROBACIÓN INMEDIATA</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-container">
+            <h2>FORMULARIO DE PRE-CALIFICACIÓN</h2>
+            <form id="creditForm">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" maxlength="100" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="dni">Número de DNI <small>(sin puntos ni espacios)</small></label>
+                        <input type="text" id="dni" name="dni" placeholder="Número de DNI" maxlength="8" pattern="\d{7,8}" inputmode="numeric" required>
+                    </div>
+                    <div class="input-group input-group-sucursal">
+                        <label for="sucursal">Sucursal Más Cercana</label>
+                            <select id="sucursal" name="sucursal">
+                            <option value="" disabled selected>Seleccioná una sucursal</option>
+                            <option value="CENTRAL">CENTRAL - Salta 1278</option>
+                            <option value="AMENEDO">AMENEDO - Salta 1298</option>
+                            <option value="DECO">DECO - Salta 1219</option>
+                            <option value="FRIAS">FRIAS - Salta 1065</option>
+                            <option value="CONFORT 245">CONFORT 245 - Salta 245</option>
+                            <option value="HUDSON">HUDSON - Av. Otto Bemberg 5229</option>
+                            <option value="RESTELLI">RESTELLI - Restelli 1631</option>
+                            <option value="BURZACO 3105">BURZACO - Av Espora 3105</option>
+                            <option value="BURZACO 3133">BURZACO - Av Espora 3133</option>
+                            <option value="CONFORT VARELA">CONFORT VARELA - Av Eva Peron 5685</option>
+                            <option value="EZPELETA">EZPELETA - Av. Centenario 5337</option>
+                            <option value="RANELAGH">RANELAGH - Av. Ranelagh 4083</option>
+                        </select>
+                    </div>
+                    <!-- Honeypot anti-bot — oculto con CSS -->
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="website">Website</label>
+                        <input type="text" id="website" name="_hp" tabindex="-1" autocomplete="off">
+                    </div>
+                </div>
+                <div class="consent-group">
+                    <label for="consent" style="font-size: 0.85rem; font-weight: normal; cursor: pointer; line-height: 1.3;">
+                        Acepto la <a href="politica-de-privacidad.html" target="_blank" style="color: #ffffff; text-decoration: underline;">política de privacidad</a> y autorizo el uso de mis datos para la pre-calificación crediticia.
+                    </label>
+                    <input type="checkbox" id="consent" name="consent" style="margin-right: 0.4rem;">
+                </div>
+                <button type="submit" class="submit-btn">
+                    CONSULTAR CRÉDITO Y CHATEAR POR WHATSAPP <i class="fa-brands fa-whatsapp"></i>
+                </button>
+                <p class="form-disclaimer">
+                    <i class="fa-solid fa-lock"></i> Tus datos están protegidos y solo serán utilizados para evaluar tu pre-calificación crediticia.
+                </p>
+            </form>
+        </div>
+        
+        <div class="hero-image-area">
+            <img src="https://res.cloudinary.com/ffwq31mi/image/upload/v1782844270/logoBoston_j2xosl.png" alt="Boston Cred" class="boston-ribbon-img" width="160" height="400" loading="eager">
+        </div>
+    </header>
+
+    <main class="container main-content">
+        
+        <section class="steps-section" id="como-funciona">
+            <div class="section-header">
+                <h2>Cómo Funciona tu Crédito en 4 Pasos</h2>
+                <p class="section-subtitle">Todo el proceso es online, seguro y sin moverte de tu casa.</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">&#x1F4DD;</div>
+                    <h3>1. Completá el formulario</h3>
+                    <p>Ingresá tu Nombre, DNI y elegí la sucursal de Confort Acuario que te quede más cómoda. ¡Lleva menos de un minuto!</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">&#x1F4F2;</div>
+                    <h3>2. Chateá con nosotros</h3>
+                    <p>Al presionar el botón verde, te derivamos directamente al WhatsApp de la sucursal que elegiste para que hables con un asesor real, sin bots.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">&#x23F1;&#xFE0F;</div>
+                    <h3>3. Aprobación en el acto</h3>
+                    <p>Con tu DNI en sistema, verificamos tu límite de crédito con Boston Cred mientras chateamos.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">&#x1F389;</div>
+                    <h3>4. ¡Elegí y disfrutá!</h3>
+                    <p>Una vez aprobado, elegís la heladera, el colchón o el mueble que buscabas y nosotros coordinamos el envío directo a tu casa.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section" id="faq">
+            <div class="section-header">
+                <h2>Preguntas Frecuentes (FAQ)</h2>
+                <p class="section-subtitle">Resolvemos tus dudas al instante.</p>
+            </div>
+            
+            <div class="faq-accordion">
+                <details class="faq-item">
+                    <summary>¿Cuáles son los requisitos para acceder al préstamo?</summary>
+                    <div class="faq-content">
+                        <p>Para nuestro "Plan DNI" básico, solo necesitás ser mayor de 18 años, tener tu DNI físico vigente y una línea de celular activa. Dependiendo del monto que necesites y tu perfil, el asesor podría llegar a pedirte por WhatsApp un comprobante de ingresos (como un recibo de sueldo), pero evaluamos cada caso de forma personalizada.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Es seguro ingresar mi DNI en esta página?</summary>
+                    <div class="faq-content">
+                        <p>¡100% seguro! Tus datos están encriptados y solo los utilizamos de forma interna para consultar tu pre-calificación crediticia a través del sistema oficial de Boston Cred. No compartimos tu información con nadie más.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿El crédito es dinero en efectivo o para comprar en el local?</summary>
+                    <div class="faq-content">
+                        <p>Esta línea de crédito está diseñada exclusivamente para que puedas equipar tu hogar. El monto aprobado (que puede ser de hasta $1.000.000) se utiliza directamente para financiar cualquier producto del catálogo de Confort Acuario en cómodas cuotas.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Qué pasa si trabajo de forma independiente o no tengo recibo de sueldo?</summary>
+                    <div class="faq-content">
+                        <p>¡No hay problema! Tenemos líneas de crédito pensadas especialmente para trabajadores independientes o informales. Completá tus datos y nuestro equipo evaluará tu historial crediticio solo con tu DNI para ofrecerte la mejor opción.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Tengo que ir a la sucursal para firmar algo?</summary>
+                    <div class="faq-content">
+                        <p>Todo el proceso de preaprobación y elección de productos lo hacemos rápido por WhatsApp. Solo vas a tener que acercarte a la sucursal para firmar el crédito, retirar tu factura y coordinar la entrega de tu producto.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Confort Acuario. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
