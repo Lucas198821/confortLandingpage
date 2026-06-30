@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const btn = this.querySelector('.submit-btn');
         const originalText = btn.innerHTML;
         btn.disabled = true;
-        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> PROCESANDO...';
+        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> ENVIANDO...';
 
         const urlGoogleScript = "https://script.google.com/macros/s/AKfycbzZj0hPzVN5kEohZBH40xe9DQKhvjnScN-ch7yTT95vKzP_0rcMB3OaJdOF9OPFRf_ksg/exec";
 
@@ -123,16 +123,21 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(() => {
             // no-cors: no podemos leer la respuesta, asumimos éxito
             markSubmitted();
-            const mensaje = `Hola, soy *${nombre}* y estoy interesado/a en solicitar un crédito personal.\n\n` +
-                `📋 *Datos del cliente:*\n` +
-                `• Nombre: ${nombre}\n` +
-                `• DNI: ${dni}\n` +
-                `• Sucursal elegida: ${sucursal}\n\n` +
-                `💰 *Monto estimado:* Hasta $1.000.000\n` +
-                `📍 *Tipo de consulta:* Crédito personal (pre-calificación)\n\n` +
-                `Quisiera que me asesoren sobre las opciones de financiamiento disponibles. ¡Muchas gracias!`;
-            const encodedMessage = encodeURIComponent(mensaje);
-            window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡ENVIADO CON ÉXITO!';
+            btn.style.animation = 'none';
+            btn.style.backgroundColor = '#0d5a00';
+            setTimeout(() => {
+                const mensaje = `Hola, soy *${nombre}* y estoy interesado/a en solicitar un crédito personal.\n\n` +
+                    `📋 *Datos del cliente:*\n` +
+                    `• Nombre: ${nombre}\n` +
+                    `• DNI: ${dni}\n` +
+                    `• Sucursal elegida: ${sucursal}\n\n` +
+                    `💰 *Monto estimado:* Hasta $1.000.000\n` +
+                    `📍 *Tipo de consulta:* Crédito personal (pre-calificación)\n\n` +
+                    `Quisiera que me asesoren sobre las opciones de financiamiento disponibles. ¡Muchas gracias!`;
+                const encodedMessage = encodeURIComponent(mensaje);
+                window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            }, 1000);
         })
         .catch(() => {
             // Error de red — permitir reintentar
