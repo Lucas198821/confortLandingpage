@@ -1,0 +1,77 @@
+/*!
+ * Font Awesome Free 6.4.0 - Local with font-display: swap
+ */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(./webfonts/fa-solid-900.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./webfonts/fa-regular-400.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./webfonts/fa-brands-400.woff2) format("woff2");
+}
+
+.fas, .fa-solid, .far, .fa-regular, .fab, .fa-brands {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+.fas, .fa-solid {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+.far, .fa-regular {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+}
+
+.fab, .fa-brands {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+
+.fas::before, .fa-solid::before,
+.far::before, .fa-regular::before,
+.fab::before, .fa-brands::before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: inherit;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+.fa-bolt::before { content: "\f0e7"; }
+.fa-mobile-screen-button::before { content: "\f3cd"; }
+.fa-shield-halved::before { content: "\f3ed"; }
+.fa-user::before { content: "\f007"; }
+.fa-id-card::before { content: "\f2c2"; }
+.fa-location-dot::before { content: "\f3c5"; }
+.fa-file-lines::before { content: "\f15c"; }
+.fa-whatsapp::before { content: "\f232"; }
+.fa-clock::before { content: "\f017"; }
+.fa-star::before { content: "\f005"; }
+.fa-check::before { content: "\f00c"; }
+.fa-lock::before { content: "\f023"; }

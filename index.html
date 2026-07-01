@@ -4,96 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitá tu Crédito Personal - Confort Acuario</title>
-    <link rel="icon" type="image/png" href="https://res.cloudinary.com/ffwq31mi/image/upload/v1782844270/favicon_m9qg8c.png">
+    <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description" content="Solicitá tu crédito personal en Confort Acuario solo con DNI y celular. Aprobación inmediata hasta $1.000.000.">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://res.cloudinary.com; connect-src https://script.google.com https://script.googleusercontent.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta name="theme-color" content="#FF6A00">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Solicitá tu Crédito Personal - Confort Acuario">
+    <meta property="og:description" content="Crédito personal hasta $1.000.000 solo con DNI y celular. Aprobación inmediata.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://confortacuario.com.ar/logo.webp">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://res.cloudinary.com; connect-src https://script.google.com https://script.googleusercontent.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts - local non-render-blocking -->
+    <link rel="preload" href="fonts-local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="webfonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="webfonts/poppins-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <noscript><link rel="stylesheet" href="fonts-local.css"></noscript>
     
-    <link rel="stylesheet" href="styles.css">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Critical CSS inlined + non-critical deferred -->
+    <link rel="preload" href="styles.css?v=6" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css?v=6"></noscript>
+    
+    <!-- FontAwesome - local non-render-blocking -->
+    <link rel="preload" href="fa-local.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <noscript><link rel="stylesheet" href="fa-local.css"></noscript>
 </head>
 <body>
 
-    <header class="hero-section">
-        <div class="container hero-content">
-            
-            <div class="hero-text-area">
+    <section class="hero-section">
+        <div class="hero-bg-image"></div>
+
+        <div class="container hero-grid">
+            <div class="hero-left">
                 <a href="https://confortacuario.com.ar/" target="_blank" class="brand-logo">
-                    <img src="https://res.cloudinary.com/ffwq31mi/image/upload/v1782844270/logo_xje7wf.png" alt="Confort Acuario" class="brand-logo-img" width="200" height="50" loading="eager">
+                    <img src="logo.webp" alt="Confort Acuario - Créditos personales para equipar tu hogar" class="brand-logo-img" width="400" height="100" loading="eager" fetchpriority="high">
                 </a>
-                
-                <h1 class="hero-title">SOLICITÁ TU <span>CRÉDITO</span><br><span>PERSONAL.</span><br><span>HASTA $1.000.000.</span></h1>
-                
-                <div class="hero-subtitle">
-                    <p class="subtitle-text">Solo con tu DNI y celular.<br>
-                    ¡LLÉVATE HOY MISMO LO QUE NECESITAS!</p>
-                    <span class="badge">APROBACIÓN INMEDIATA</span>
+
+                <h1 class="hero-title">
+                    Obtené tu<br>
+                    <span class="highlight">crédito personal</span><br>
+                    hasta<br>
+                    <span class="amount">$1.000.000</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Solo con tu DNI y celular.<br>
+                    ¡Llevate hoy mismo lo que necesitás!
+                </p>
+
+                <div class="feature-badges">
+                    <div class="feature-badge">
+                        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <span>Conocé si calificás<br>en pocos minutos</span>
+                    </div>
+                    <div class="feature-badge">
+                        <div class="feature-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <span>100% online<br>desde tu celular</span>
+                    </div>
+                    <div class="feature-badge">
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <span>Seguro, simple<br>y confiable</span>
+                    </div>
                 </div>
             </div>
 
-        </div>
-
-        <div class="form-container">
-            <h2>FORMULARIO DE PRE-CALIFICACIÓN</h2>
-            <form id="creditForm">
-                <div class="form-grid">
-                    <div class="input-group">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" maxlength="100" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="dni">Número de DNI <small>(sin puntos ni espacios)</small></label>
-                        <input type="text" id="dni" name="dni" placeholder="Número de DNI" maxlength="8" pattern="\d{7,8}" inputmode="numeric" required>
-                    </div>
-                    <div class="input-group input-group-sucursal">
-                        <label for="sucursal">Sucursal Más Cercana</label>
-                            <select id="sucursal" name="sucursal">
-                            <option value="" disabled selected>Seleccioná una sucursal</option>
-                            <option value="CENTRAL">CENTRAL - Salta 1278</option>
-                            <option value="AMENEDO">AMENEDO - Salta 1298</option>
-                            <option value="DECO">DECO - Salta 1219</option>
-                            <option value="FRIAS">FRIAS - Salta 1065</option>
-                            <option value="CONFORT 245">CONFORT 245 - Salta 245</option>
-                            <option value="HUDSON">HUDSON - Av. Otto Bemberg 5229</option>
-                            <option value="RESTELLI">RESTELLI - Restelli 1631</option>
-                            <option value="BURZACO 3105">BURZACO - Av Espora 3105</option>
-                            <option value="BURZACO 3133">BURZACO COLCHONERÍA - Av Espora 3133</option>
-                            <option value="CONFORT VARELA">CONFORT VARELA - Av Eva Peron 5685</option>
-                            <option value="EZPELETA">EZPELETA - Av. Centenario 5337</option>
-                            <option value="RANELAGH">RANELAGH - Av. Ranelagh 4083</option>
-                        </select>
-                    </div>
-                    <!-- Honeypot anti-bot — oculto con CSS -->
-                    <div class="hp-field" aria-hidden="true">
-                        <label for="website">Website</label>
-                        <input type="text" id="website" name="_hp" tabindex="-1" autocomplete="off">
-                    </div>
+            <div class="hero-right">
+                <div class="form-card">
+                    <h2 class="form-title">Formulario de<br><span class="form-title-accent">pre-calificación</span></h2>
+                    <form id="creditForm">
+                        <div class="input-group">
+                            <label for="nombre">Nombre completo</label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-user input-icon"></i>
+                                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" maxlength="100" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="dni">Número de DNI <small>(sin puntos ni espacios)</small></label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-id-card input-icon"></i>
+                                <input type="text" id="dni" name="dni" placeholder="Número de DNI" maxlength="8" pattern="\d{7,8}" inputmode="numeric" required>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label for="sucursal">Sucursal más cercana</label>
+                            <div class="input-wrapper select-wrapper">
+                                <i class="fa-solid fa-location-dot input-icon"></i>
+                                <select id="sucursal" name="sucursal">
+                                    <option value="" disabled selected>Seleccioná una sucursal</option>
+                                    <option value="CENTRAL">CENTRAL - Salta 1278</option>
+                                    <option value="AMENEDO">AMENEDO - Salta 1298</option>
+                                    <option value="DECO">DECO - Salta 1219</option>
+                                    <option value="FRIAS">FRIAS - Salta 1065</option>
+                                    <option value="CONFORT 245">CONFORT 245 - Salta 245</option>
+                                    <option value="HUDSON">HUDSON - Av. Otto Bemberg 5229</option>
+                                    <option value="RESTELLI">RESTELLI - Restelli 1631</option>
+                                    <option value="BURZACO 3105">BURZACO - Av Espora 3105</option>
+                                    <option value="BURZACO 3133">BURZACO COLCHONERÍA - Av Espora 3133</option>
+                                    <option value="CONFORT VARELA">CONFORT VARELA - Av Eva Peron 5685</option>
+                                    <option value="EZPELETA">EZPELETA - Av. Centenario 5337</option>
+                                    <option value="RANELAGH">RANELAGH - Av. Ranelagh 4083</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Honeypot anti-bot -->
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="_hp" tabindex="-1" autocomplete="off">
+                        </div>
+                        <div class="consent-group">
+                            <input type="checkbox" id="consent" name="consent" aria-label="Acepto la política de privacidad">
+                            <label for="consent">
+                                <span class="custom-check" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                                <span class="consent-text">Acepto la <a href="politica-de-privacidad.html" target="_blank" onclick="event.stopPropagation()">Política de Privacidad</a> y autorizo el tratamiento de mis datos para realizar la pre-calificación crediticia.</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            CONSULTAR CRÉDITO<br>POR WHATSAPP
+                        </button>
+                        <p class="form-disclaimer">
+                            <i class="fa-solid fa-lock"></i> Tus datos están protegidos y solo serán utilizados para evaluar tu pre-calificación crediticia.
+                        </p>
+                    </form>
                 </div>
-                <div class="consent-group">
-                    <label for="consent" style="font-size: 0.85rem; font-weight: normal; cursor: pointer; line-height: 1.3;">
-                        Acepto la <a href="politica-de-privacidad.html" target="_blank" style="color: #ffffff; text-decoration: underline;">política de privacidad</a> y autorizo el uso de mis datos para la pre-calificación crediticia.
-                    </label>
-                    <input type="checkbox" id="consent" name="consent" style="margin-right: 0.4rem;">
-                </div>
-                <button type="submit" class="submit-btn">
-                    CONSULTAR CRÉDITO Y CHATEAR POR WHATSAPP <i class="fa-brands fa-whatsapp"></i>
-                </button>
-                <p class="form-disclaimer">
-                    <i class="fa-solid fa-lock"></i> Tus datos están protegidos y solo serán utilizados para evaluar tu pre-calificación crediticia.
-                </p>
-            </form>
+            </div>
         </div>
-        
-        <div class="hero-image-area">
-            <img src="https://res.cloudinary.com/ffwq31mi/image/upload/v1782844270/logoBoston_j2xosl.png" alt="Boston Cred" class="boston-ribbon-img" width="160" height="400" loading="eager">
-        </div>
-    </header>
+    </section>
 
     <main class="container main-content">
         
@@ -105,22 +142,22 @@
             
             <div class="steps-grid">
                 <div class="step-card">
-                    <div class="step-icon">&#x1F4DD;</div>
+                    <div class="step-icon"><i class="fa-solid fa-file-lines"></i></div>
                     <h3>1. Completá el formulario</h3>
                     <p>Ingresá tu Nombre, DNI y elegí la sucursal de Confort Acuario que te quede más cómoda. ¡Lleva menos de un minuto!</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-icon">&#x1F4F2;</div>
+                    <div class="step-icon"><i class="fa-brands fa-whatsapp"></i></div>
                     <h3>2. Chateá con nosotros</h3>
                     <p>Al presionar el botón verde, te derivamos directamente al WhatsApp de la sucursal que elegiste para que hables con un asesor real, sin bots.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-icon">&#x23F1;&#xFE0F;</div>
+                    <div class="step-icon"><i class="fa-solid fa-clock"></i></div>
                     <h3>3. Aprobación en el acto</h3>
                     <p>Con tu DNI en sistema, verificamos tu límite de crédito con Boston Cred mientras chateamos.</p>
                 </div>
                 <div class="step-card">
-                    <div class="step-icon">&#x1F389;</div>
+                    <div class="step-icon"><i class="fa-solid fa-star"></i></div>
                     <h3>4. ¡Elegí y disfrutá!</h3>
                     <p>Una vez aprobado, elegís la heladera, el colchón o el mueble que buscabas y nosotros coordinamos el envío directo a tu casa.</p>
                 </div>
@@ -179,6 +216,36 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Widget de Soporte Interactivo -->
+    <div class="chat-widget-container">
+        <div id="chat-popover" class="chat-popover hidden">
+            <p>¡Hola! 👋 ¿Necesitás ayuda con la pre-calificación de tu crédito?</p>
+            <button onclick="cerrarPopover(event)" class="btn-cerrar-popover">×</button>
+        </div>
+        <a href="https://wa.me/5491144711333" class="chat-button" target="_blank" title="¿Necesitás ayuda?">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-headset">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                <path d="M21 11a9 9 0 0 1-7.5 8.9"></path>
+                <path d="M12 21a2 2 0 1 1-4 0"></path>
+            </svg>
+        </a>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const popover = document.getElementById('chat-popover');
+            setTimeout(() => {
+                if (popover) popover.classList.remove('hidden');
+            }, 10000);
+        });
+
+        function cerrarPopover(event) {
+            event.preventDefault();
+            const popover = document.getElementById('chat-popover');
+            if (popover) popover.classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
