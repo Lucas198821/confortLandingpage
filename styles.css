@@ -1466,7 +1466,7 @@ footer {
         width: 92%;
         max-width: none;
         margin: 0 auto;
-        padding: 14px 16px 12px;
+        padding: 10px 14px 8px;
         border-radius: 20px;
         background: var(--bg-light);
         box-shadow: var(--shadow-form);
@@ -1479,13 +1479,13 @@ footer {
         font-weight: 700;
         color: var(--navy);
         text-align: center;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
         line-height: 1.3;
     }
 
     /* --- Inputs --- */
     .input-group {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 
     .input-group label {
@@ -1493,7 +1493,7 @@ footer {
         font-size: 13px;
         font-weight: 600;
         color: var(--text-dark);
-        margin-bottom: 3px;
+        margin-bottom: 2px;
     }
 
     .input-group label small {
@@ -1546,7 +1546,7 @@ footer {
 
     /* --- Checkbox / Consent --- */
     .consent-group {
-        margin-bottom: 8px;
+        margin-bottom: 6px;
     }
 
     .consent-group label {
@@ -1593,7 +1593,7 @@ footer {
         width: 100%;
         max-width: 280px;
         height: 44px;
-        margin: 8px auto 0;
+        margin: 4px auto 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1619,7 +1619,7 @@ footer {
         text-align: center;
         font-size: 9px;
         color: var(--text-gray);
-        margin-top: 6px;
+        margin-top: 4px;
         line-height: 1.3;
         display: flex;
         align-items: center;
@@ -1634,12 +1634,12 @@ footer {
 
     /* --- Main Content --- */
     .main-content {
-        padding: 40px 20px 48px;
-        gap: 40px;
+        padding: 24px 16px 32px;
+        gap: 24px;
     }
 
     .section-header {
-        margin-bottom: 32px;
+        margin-bottom: 16px;
     }
 
     .section-header h2 {
@@ -1653,7 +1653,7 @@ footer {
 
     /* --- Steps --- */
     .step-card {
-        padding: 24px 16px;
+        padding: 16px;
     }
 
     .step-card h3 {
@@ -1670,7 +1670,7 @@ footer {
         width: 52px;
         height: 52px;
         font-size: 22px;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
     }
 
     /* --- FAQ --- */
@@ -1679,12 +1679,12 @@ footer {
     }
 
     .faq-item summary {
-        padding: 14px 16px;
+        padding: 12px 14px;
         font-size: 14px;
     }
 
     .faq-content {
-        padding: 14px 16px;
+        padding: 12px 14px;
         font-size: 13px;
     }
 
