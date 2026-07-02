@@ -1327,7 +1327,7 @@ footer {
 
 /* ============================================================
    RESPONSIVE — 375×667 (iPhone SE)
-   Hero: 100vh, distribución equilibrada, sin reducir tipografía
+   Hero: 100vh, tarjetas 92%, distribución equilibrada
    ============================================================ */
 @media (max-width: 375px) {
 
@@ -1410,24 +1410,28 @@ footer {
         margin-bottom: 0;
     }
 
-    /* --- Feature Badges --- */
+    /* --- Feature Badges: 92% width --- */
     .feature-badges {
         display: flex;
-        gap: 8px;
+        gap: 10px;
         justify-content: center;
         flex-wrap: wrap;
-        width: 100%;
+        width: 92%;
+        margin: 0 auto;
     }
 
     .feature-badge {
         display: flex;
         align-items: center;
         gap: 6px;
-        padding: 10px 12px;
+        padding: 8px 12px;
         border-radius: 12px;
         background: var(--bg-light);
         border: 1px solid var(--border-color);
         box-shadow: var(--shadow-sm);
+        flex: 1;
+        min-width: 0;
+        justify-content: center;
     }
 
     .feature-icon {
@@ -1444,7 +1448,7 @@ footer {
     }
 
     .feature-badge span {
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 600;
         color: var(--text-dark);
         line-height: 1.2;
@@ -1457,12 +1461,12 @@ footer {
         width: 100%;
     }
 
-    /* --- Form Card --- */
+    /* --- Form Card: 92% width, consistente con badges --- */
     .form-card {
-        width: 100%;
-        max-width: 320px;
+        width: 92%;
+        max-width: none;
         margin: 0 auto;
-        padding: 16px 16px 12px;
+        padding: 14px 16px 12px;
         border-radius: 20px;
         background: var(--bg-light);
         box-shadow: var(--shadow-form);
