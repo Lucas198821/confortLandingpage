@@ -1326,17 +1326,21 @@ footer {
 }
 
 /* ============================================================
-   RESPONSIVE — 375px (iPhone SE / 12 Mini / 13 Mini)
-   Hero ultra-compacto: todo visible sin scroll
+   RESPONSIVE — 375×667 (iPhone SE)
+   Hero: 100vh, distribución equilibrada, sin reducir tipografía
    ============================================================ */
 @media (max-width: 375px) {
 
-    /* --- Hero Section --- */
+    /* --- Hero Section: 100vh distribuido --- */
     .hero-section {
-        min-height: auto;
-        max-height: none;
-        padding: 4px 0 8px;
-        align-items: flex-start;
+        min-height: 100vh;
+        min-height: 100dvh;
+        max-height: 100vh;
+        max-height: 100dvh;
+        padding: 0;
+        display: flex;
+        align-items: stretch;
+        overflow: hidden;
     }
 
     .hero-bg-image {
@@ -1344,11 +1348,16 @@ footer {
         background-size: cover;
     }
 
-    /* --- Hero Grid --- */
+    /* --- Hero Grid: distribución vertical equilibrada --- */
     .hero-grid {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 0;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 12px 0;
     }
 
     /* --- Hero Left --- */
@@ -1357,26 +1366,24 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 4px;
+        gap: 8px;
         width: 100%;
-        padding-top: 2px;
     }
 
-    /* --- Logo (-10%) --- */
+    /* --- Logo --- */
     .brand-logo {
         display: inline-flex;
         justify-content: center;
     }
 
     .brand-logo-img {
-        height: 28px;
+        height: 32px;
         object-fit: contain;
-        margin-bottom: 6px;
     }
 
     /* --- Title --- */
     .hero-title {
-        font-size: 28px;
+        font-size: 34px;
         font-weight: 400;
         line-height: 1.05;
         text-align: center;
@@ -1389,13 +1396,13 @@ footer {
     }
 
     .hero-title .amount {
-        font-size: 34px;
+        font-size: 40px;
         font-weight: 800;
     }
 
     /* --- Subtitle --- */
     .hero-subtitle {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 500;
         color: #1A1A2E;
         line-height: 1.3;
@@ -1410,25 +1417,23 @@ footer {
         justify-content: center;
         flex-wrap: wrap;
         width: 100%;
-        margin-top: 2px;
     }
 
     .feature-badge {
         display: flex;
         align-items: center;
         gap: 6px;
-        padding: 8px 12px;
+        padding: 10px 12px;
         border-radius: 12px;
         background: var(--bg-light);
         border: 1px solid var(--border-color);
         box-shadow: var(--shadow-sm);
-        min-height: 40px;
     }
 
     .feature-icon {
-        width: 22px;
-        height: 22px;
-        font-size: 10px;
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
         border-radius: 50%;
         background: var(--primary-orange-bg);
         color: var(--primary-orange);
@@ -1439,7 +1444,7 @@ footer {
     }
 
     .feature-badge span {
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 600;
         color: var(--text-dark);
         line-height: 1.2;
@@ -1450,15 +1455,14 @@ footer {
         display: flex;
         justify-content: center;
         width: 100%;
-        padding-top: 2px;
     }
 
     /* --- Form Card --- */
     .form-card {
         width: 100%;
-        max-width: 340px;
+        max-width: 320px;
         margin: 0 auto;
-        padding: 14px 16px 14px;
+        padding: 16px 16px 12px;
         border-radius: 20px;
         background: var(--bg-light);
         box-shadow: var(--shadow-form);
@@ -1467,22 +1471,22 @@ footer {
     }
 
     .form-title {
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 700;
         color: var(--navy);
         text-align: center;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
         line-height: 1.3;
     }
 
     /* --- Inputs --- */
     .input-group {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
     .input-group label {
         display: block;
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 600;
         color: var(--text-dark);
         margin-bottom: 3px;
@@ -1503,7 +1507,7 @@ footer {
     .input-wrapper input,
     .input-wrapper select {
         width: 100%;
-        height: 38px;
+        height: 42px;
         padding: 0 10px 0 34px;
         border: 1.5px solid var(--border-color);
         border-radius: 10px;
@@ -1538,7 +1542,7 @@ footer {
 
     /* --- Checkbox / Consent --- */
     .consent-group {
-        margin-bottom: 6px;
+        margin-bottom: 8px;
     }
 
     .consent-group label {
@@ -1583,9 +1587,9 @@ footer {
     /* --- Submit Button --- */
     .submit-btn {
         width: 100%;
-        max-width: 300px;
-        height: 42px;
-        margin: 10px auto 0;
+        max-width: 280px;
+        height: 44px;
+        margin: 8px auto 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1593,7 +1597,7 @@ footer {
         background: var(--secondary-green);
         color: white;
         border: none;
-        border-radius: 21px;
+        border-radius: 22px;
         font-family: var(--font-primary);
         font-size: 12px;
         font-weight: 700;
